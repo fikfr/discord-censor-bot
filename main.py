@@ -28,7 +28,7 @@ with open(PATH_TO_WORDS, 'r') as file:
 
 @client.event
 async def on_ready():
-    print(bcolors.OKGREEN + "Ready to Censor")
+    print(bcolors.OKGREEN + "Ready to Censor" + bcolors.ENDC)
 
 @client.event
 async def on_message(message):
