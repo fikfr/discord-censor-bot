@@ -1,5 +1,4 @@
 import discord
-import os
 import sys
 import asyncio
 from config import BOT_TOKEN
