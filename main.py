@@ -1,10 +1,9 @@
 import discord
-from dotenv import load_dotenv
 import os
 import sys
 import asyncio
-
-load_dotenv()
+from config import BOT_TOKEN
+from config import PATH_TO_WORDS
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -22,7 +21,10 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-words = ["insert", "words", "to", "censor"]
+
+with open(PATH_TO_WORDS, 'r') as file:
+    words = file.read().split()
+
 
 @client.event
 async def on_ready():
@@ -59,7 +61,7 @@ async def shutdown():
     await client.close()
 
 try:
-    client.run(os.getenv('DISCORD_BOT_TOKEN'))  # Load the bot token from the environment variable
+    client.run(BOT_TOKEN)  # Load the bot token from the environment variable
 except KeyboardInterrupt:
     asyncio.run(shutdown())
     print("Bot is shutting down...")
