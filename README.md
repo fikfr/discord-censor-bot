@@ -4,7 +4,9 @@ Bot that can censor certain words from wordlist you provide. It will delete orig
 Installation:
 
 >` git clone https://github.com/fikfr/discord-censor-bot.git `
+
 Install discord package for python
+
 >`pip install -U discord.py`
 
 Go to config and add your bot token and path to wordlist.
